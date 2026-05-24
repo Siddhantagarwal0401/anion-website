@@ -1,0 +1,129 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom scrollbar styling */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #fef6f3;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #e8c4c4;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #dba8a8;
+}
+
+/* Base styles */
+@layer base {
+  body {
+    @apply bg-rose-50/50;
+    color: #6b5c5c;
+  }
+  
+  * {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+/* Custom utilities */
+@layer utilities {
+  /* Warm paper texture */
+  .paper-texture {
+    background-color: #faf6f0;
+    background-image: 
+      url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%' height='100%' filter='url(%23noise)' opacity='0.08'/%3E%3C/svg%3E");
+  }
+  
+  /* Soft shadow for cards */
+  .polaroid-shadow {
+    box-shadow: 
+      0 4px 6px -1px rgba(120, 80, 40, 0.08),
+      0 2px 4px -1px rgba(120, 80, 40, 0.04),
+      0 10px 20px -5px rgba(120, 80, 40, 0.12);
+  }
+  
+  /* Warm glow effect */
+  .dreamy-glow {
+    box-shadow: 
+      0 0 30px rgba(212, 165, 116, 0.3),
+      0 0 60px rgba(212, 165, 116, 0.15);
+  }
+  
+  /* Tape effect - more realistic */
+  .tape {
+    background: linear-gradient(135deg, rgba(255, 248, 220, 0.85) 0%, rgba(245, 235, 200, 0.9) 100%);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Torn paper edge effect */
+  .torn-edge-top {
+    -webkit-mask-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 100 10' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0,10 L0,3 Q5,0 10,4 T20,3 T30,5 T40,2 T50,4 T60,3 T70,5 T80,2 T90,4 T100,3 L100,10 Z' fill='black'/%3E%3C/svg%3E");
+    mask-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 100 10' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0,10 L0,3 Q5,0 10,4 T20,3 T30,5 T40,2 T50,4 T60,3 T70,5 T80,2 T90,4 T100,3 L100,10 Z' fill='black'/%3E%3C/svg%3E");
+    -webkit-mask-size: 100% 100%;
+    mask-size: 100% 100%;
+  }
+  
+  .torn-edge-bottom {
+    -webkit-mask-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 100 10' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0,0 L0,7 Q5,10 10,6 T20,7 T30,5 T40,8 T50,6 T60,7 T70,5 T80,8 T90,6 T100,7 L100,0 Z' fill='black'/%3E%3C/svg%3E");
+    mask-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 100 10' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0,0 L0,7 Q5,10 10,6 T20,7 T30,5 T40,8 T50,6 T60,7 T70,5 T80,8 T90,6 T100,7 L100,0 Z' fill='black'/%3E%3C/svg%3E");
+    -webkit-mask-size: 100% 100%;
+    mask-size: 100% 100%;
+  }
+  
+  /* Scrapbook photo style */
+  .scrapbook-photo {
+    background: white;
+    padding: 8px;
+    box-shadow: 
+      2px 3px 8px rgba(0, 0, 0, 0.15),
+      0 0 0 1px rgba(0, 0, 0, 0.02);
+  }
+}
+
+/* Custom animations */
+@keyframes float {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-15px) rotate(2deg); }
+}
+
+@keyframes twinkle {
+  0%, 100% { opacity: 0.3; transform: scale(1); }
+  50% { opacity: 0.8; transform: scale(1.1); }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Handwritten text - romantic dusty rose */
+.handwritten {
+  font-family: var(--font-caveat);
+  font-size: 1.4em;
+  line-height: 1.6;
+  color: #7a5a5a;
+  font-weight: 500;
+}
+
+/* Elegant heading - deeper rose */
+.elegant-heading {
+  font-family: var(--font-caveat);
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  color: #5c4040;
+}
+
+/* For special emphasis */
+.script-text {
+  font-family: var(--font-caveat);
+  font-weight: 700;
+  color: #8b6b6b;
+}
