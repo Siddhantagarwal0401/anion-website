@@ -14,7 +14,7 @@ export default function HeroSection() {
 
   // Calculate days together (customize the start date)
   useEffect(() => {
-    const startDate = new Date("2026-02-23"); // CUSTOMIZE: Your anniversary start date
+    const startDate = new Date("2026-02-26"); // CUSTOMIZE: Your anniversary start date
     const today = new Date();
     const diffTime = Math.abs(today.getTime() - startDate.getTime());
     const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));

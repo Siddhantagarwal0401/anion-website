@@ -1,9 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { useState } from "react";
 import Image from "next/image";
-import Modal from "@/components/Modal";
 
 /**
  * GallerySection Component
@@ -26,142 +24,163 @@ interface Photo {
 }
 
 export default function GallerySection() {
-  const [selectedPhoto, setSelectedPhoto] = useState<Photo | null>(null);
 
   // CUSTOMIZE: Replace with your actual photos
   // Add more photos by duplicating entries - they'll scatter naturally
   const photos: Photo[] = [
     {
       id: 1,
-      src: "/images/6E291272-DE5B-41DD-A9B3-A578DF2B7D37.JPG",
+      src: "/images/IMG_0219.jpg",
       alt: "Memory",
       caption: "",
       rotation: -8,
       offsetX: 25,
       offsetY: -15,
-      zIndex: 12,
+      zIndex: 15,
       tapePosition: "both",
     },
     {
       id: 2,
-      src: "/images/39190AA2-D70C-471B-9203-5A5FDFA9AD07.JPG",
+      src: "/images/IMG_0183.jpg",
       alt: "Memory",
       caption: "",
       rotation: 10,
       offsetX: -18,
       offsetY: 12,
-      zIndex: 11,
+      zIndex: 14,
       tapePosition: "top-right",
     },
     {
       id: 3,
+      src: "/images/IMG_0216.jpg",
+      alt: "Memory",
+      caption: "",
+      rotation: -5,
+      offsetX: 15,
+      offsetY: -8,
+      zIndex: 13,
+      tapePosition: "center",
+    },
+    {
+      id: 4,
+      src: "/images/IMG_0223_2.jpg",
+      alt: "Memory",
+      caption: "",
+      rotation: 7,
+      offsetX: -20,
+      offsetY: 10,
+      zIndex: 12,
+      tapePosition: "top-left",
+    },
+    {
+      id: 5,
+      src: "/images/6E291272-DE5B-41DD-A9B3-A578DF2B7D37.JPG",
+      alt: "Memory",
+      caption: "",
+      rotation: -6,
+      offsetX: 22,
+      offsetY: -12,
+      zIndex: 11,
+      tapePosition: "both",
+    },
+    {
+      id: 6,
+      src: "/images/39190AA2-D70C-471B-9203-5A5FDFA9AD07.JPG",
+      alt: "Memory",
+      caption: "",
+      rotation: 8,
+      offsetX: -15,
+      offsetY: 18,
+      zIndex: 10,
+      tapePosition: "top-right",
+    },
+    {
+      id: 7,
       src: "/images/IMG_0404.PNG",
       alt: "Memory",
       caption: "",
       rotation: -7,
       offsetX: 20,
       offsetY: -10,
-      zIndex: 10,
+      zIndex: 9,
       tapePosition: "center",
     },
     {
-      id: 4,
+      id: 8,
       src: "/images/704931723_1743934640300942_5740227327122012891_n.jpg",
       alt: "Memory",
       caption: "",
-      rotation: 7,
+      rotation: 5,
       offsetX: -25,
       offsetY: 8,
-      zIndex: 9,
+      zIndex: 8,
       tapePosition: "top-left",
     },
     {
-      id: 5,
+      id: 9,
       src: "/images/691598792_2382202385638224_9161646026640442362_n.jpg",
       alt: "Memory",
       caption: "",
-      rotation: -6,
+      rotation: -4,
       offsetX: 18,
-      offsetY: -12,
-      zIndex: 8,
+      offsetY: -15,
+      zIndex: 7,
       tapePosition: "both",
     },
     {
-      id: 6,
+      id: 10,
       src: "/images/691726266_1541453410745701_2485974658511859479_n.jpg",
       alt: "Memory",
       caption: "",
-      rotation: 4,
-      offsetX: -15,
-      offsetY: 18,
-      zIndex: 7,
+      rotation: 6,
+      offsetX: -12,
+      offsetY: 20,
+      zIndex: 6,
       tapePosition: "top-right",
     },
     {
-      id: 7,
+      id: 11,
       src: "/images/693246680_2410062909515142_9037852735062399784_n.jpg",
       alt: "Memory",
       caption: "",
       rotation: -9,
       offsetX: 22,
       offsetY: -8,
-      zIndex: 6,
-      tapePosition: "center",
-    },
-    {
-      id: 8,
-      src: "/images/694385137_1535048854895560_8891796322311909966_n.jpg",
-      alt: "Memory",
-      caption: "",
-      rotation: 6,
-      offsetX: -18,
-      offsetY: -15,
       zIndex: 5,
-      tapePosition: "both",
-    },
-    {
-      id: 9,
-      src: "/images/701557002_819201941010945_1502624332485984013_n.jpg",
-      alt: "Memory",
-      caption: "",
-      rotation: -4,
-      offsetX: 12,
-      offsetY: 20,
-      zIndex: 4,
-      tapePosition: "top-left",
-    },
-    {
-      id: 10,
-      src: "/images/703178461_3118281875227714_6470297576270963945_n.jpg",
-      alt: "Memory",
-      caption: "",
-      rotation: 8,
-      offsetX: -22,
-      offsetY: -10,
-      zIndex: 3,
-      tapePosition: "top-right",
-    },
-    {
-      id: 11,
-      src: "/images/678937942_1368758698637055_7396278778164225656_n.jpg",
-      alt: "Memory",
-      caption: "",
-      rotation: -7,
-      offsetX: 20,
-      offsetY: 15,
-      zIndex: 2,
       tapePosition: "center",
     },
     {
       id: 12,
+      src: "/images/694385137_1535048854895560_8891796322311909966_n.jpg",
+      alt: "Memory",
+      caption: "",
+      rotation: 4,
+      offsetX: -18,
+      offsetY: -15,
+      zIndex: 4,
+      tapePosition: "both",
+    },
+    {
+      id: 13,
+      src: "/images/701557002_819201941010945_1502624332485984013_n.jpg",
+      alt: "Memory",
+      caption: "",
+      rotation: -5,
+      offsetX: 12,
+      offsetY: 15,
+      zIndex: 3,
+      tapePosition: "top-left",
+    },
+    {
+      id: 14,
       src: "/images/705086506_2296356684224709_6403460856068310334_n.jpg",
       alt: "Memory",
       caption: "",
-      rotation: 5,
-      offsetX: -15,
-      offsetY: -18,
-      zIndex: 1,
-      tapePosition: "both",
+      rotation: 7,
+      offsetX: -20,
+      offsetY: -10,
+      zIndex: 2,
+      tapePosition: "top-right",
     },
   ];
 
@@ -298,7 +317,7 @@ export default function GallerySection() {
             {photos.slice(0, 4).map((photo, index) => (
               <motion.div
                 key={photo.id}
-                className="relative cursor-pointer"
+                className="relative"
                 style={{
                   zIndex: photo.zIndex,
                   marginLeft: index > 0 ? -[30, 25, 40, 20][index] + "px" : "0",
@@ -313,7 +332,6 @@ export default function GallerySection() {
                   zIndex: 20,
                   transition: { duration: 0.2 }
                 }}
-                onClick={() => setSelectedPhoto(photo)}
               >
                 {/* Photo frame - clean polaroid style */}
                 <div 
@@ -343,7 +361,7 @@ export default function GallerySection() {
             {photos.slice(4, 7).map((photo, index) => (
               <motion.div
                 key={photo.id}
-                className="relative cursor-pointer"
+                className="relative"
                 style={{
                   zIndex: photo.zIndex,
                   marginLeft: index > 0 ? -[35, 28][index - 1] + "px" : "0",
@@ -358,7 +376,6 @@ export default function GallerySection() {
                   zIndex: 20,
                   transition: { duration: 0.2 }
                 }}
-                onClick={() => setSelectedPhoto(photo)}
               >
                 <div 
                   className="relative bg-white p-2 pb-8 shadow-lg hover:shadow-2xl transition-shadow"
@@ -385,7 +402,7 @@ export default function GallerySection() {
             {photos.slice(7, 10).map((photo, index) => (
               <motion.div
                 key={photo.id}
-                className="relative cursor-pointer"
+                className="relative"
                 style={{
                   zIndex: photo.zIndex,
                   marginLeft: index > 0 ? -[32, 25][index - 1] + "px" : "0",
@@ -400,7 +417,6 @@ export default function GallerySection() {
                   zIndex: 20,
                   transition: { duration: 0.2 }
                 }}
-                onClick={() => setSelectedPhoto(photo)}
               >
                 <div 
                   className="relative bg-white p-2 pb-8 shadow-lg hover:shadow-2xl transition-shadow"
@@ -422,15 +438,15 @@ export default function GallerySection() {
             ))}
           </div>
 
-          {/* Fourth row - centered, 2 photos */}
-          <div className="flex flex-wrap justify-center gap-4 md:gap-0 md:-mt-14">
-            {photos.slice(10).map((photo, index) => (
+          {/* Fourth row - 2 photos */}
+          <div className="flex flex-wrap justify-center gap-4 md:gap-0 md:-mt-14 md:ml-8">
+            {photos.slice(10, 12).map((photo, index) => (
               <motion.div
                 key={photo.id}
-                className="relative cursor-pointer"
+                className="relative"
                 style={{
                   zIndex: photo.zIndex,
-                  marginLeft: index > 0 ? "-45px" : "0",
+                  marginLeft: index > 0 ? "-40px" : "0",
                 }}
                 initial={{ opacity: 0, y: 40, rotate: photo.rotation * 2 }}
                 whileInView={{ opacity: 1, y: 0, rotate: photo.rotation }}
@@ -442,7 +458,47 @@ export default function GallerySection() {
                   zIndex: 20,
                   transition: { duration: 0.2 }
                 }}
-                onClick={() => setSelectedPhoto(photo)}
+              >
+                <div 
+                  className="relative bg-white p-2 pb-8 shadow-lg hover:shadow-2xl transition-shadow"
+                  style={{ transform: `translateX(${photo.offsetX}px) translateY(${photo.offsetY}px)` }}
+                >
+                  {photo.tapePosition && <Tape position={photo.tapePosition} />}
+                  
+                  <div className="relative w-52 h-52 md:w-60 md:h-60 overflow-hidden bg-stone-100">
+                    <Image
+                      src={photo.src}
+                      alt={photo.alt}
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 768px) 208px, 240px"
+                    />
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+
+          {/* Fifth row - 2 photos */}
+          <div className="flex flex-wrap justify-center gap-4 md:gap-0 md:-mt-12 md:-mr-6">
+            {photos.slice(12).map((photo, index) => (
+              <motion.div
+                key={photo.id}
+                className="relative"
+                style={{
+                  zIndex: photo.zIndex,
+                  marginLeft: index > 0 ? "-35px" : "0",
+                }}
+                initial={{ opacity: 0, y: 40, rotate: photo.rotation * 2 }}
+                whileInView={{ opacity: 1, y: 0, rotate: photo.rotation }}
+                viewport={{ once: true }}
+                transition={{ delay: 1.0 + index * 0.12, duration: 0.6 }}
+                whileHover={{ 
+                  scale: 1.05, 
+                  rotate: 0, 
+                  zIndex: 20,
+                  transition: { duration: 0.2 }
+                }}
               >
                 <div 
                   className="relative bg-white p-2 pb-8 shadow-lg hover:shadow-2xl transition-shadow"
@@ -467,17 +523,6 @@ export default function GallerySection() {
 
       </div>
 
-      {/* Modal for enlarged photos */}
-      {selectedPhoto && (
-        <Modal
-          isOpen={!!selectedPhoto}
-          onClose={() => setSelectedPhoto(null)}
-          imageSrc={selectedPhoto.src}
-          caption={selectedPhoto.caption}
-          date={selectedPhoto.date}
-          location={selectedPhoto.location}
-        />
-      )}
     </section>
   );
 }
