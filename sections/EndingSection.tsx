@@ -159,7 +159,7 @@ export default function EndingSection() {
             viewport={{ once: true }}
             transition={{ delay: 0.2, duration: 1 }}
           >
-            I know that this exam period has not been easy for us. We have had to constanly prioritize school over each other.
+            I know that this exam period has not been easy for us. We have had to constantly prioritize school over each other.
             But we made it through, and no matter how little time we have with each other I will always cherish every moment we have and nothing can change the way I feel about you. LIKE EVER
           </motion.p>
           
