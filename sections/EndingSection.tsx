@@ -181,7 +181,7 @@ export default function EndingSection() {
             transition={{ delay: 0.8, duration: 1 }}
           >
             You worked extremely hard during this exam period, and if no one else has said it I am extremely PROUD of u.
-            I know it wasn't always easy, but I always believ in you and I am EXTREMELY EXTREMELY proud of u.
+            I know it wasn't always easy, but I always believe in you and I am EXTREMELY EXTREMELY proud of u.
           </motion.p>
           
           
