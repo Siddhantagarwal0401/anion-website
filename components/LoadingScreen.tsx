@@ -68,18 +68,15 @@ export default function LoadingScreen({ onComplete }: LoadingScreenProps) {
 
   useEffect(() => {
     if (progress >= 100) {
-      // Start exit animation
-      const exitTimer = setTimeout(() => {
-        setIsExiting(true);
-      }, 800);
-
-      // Complete and unmount
+      // Start exit animation immediately
+      setIsExiting(true);
+      
+      // Complete and unmount quickly
       const completeTimer = setTimeout(() => {
         onComplete();
-      }, 2000);
+      }, 600);
 
       return () => {
-        clearTimeout(exitTimer);
         clearTimeout(completeTimer);
       };
     }
@@ -196,7 +193,7 @@ export default function LoadingScreen({ onComplete }: LoadingScreenProps) {
           }}
           initial={{ opacity: 1 }}
           animate={{ opacity: 0 }}
-          transition={{ duration: 1.2, ease: [0.25, 0.1, 0.25, 1] }}
+          transition={{ duration: 0.5, ease: [0.25, 0.1, 0.25, 1] }}
         />
       )}
     </AnimatePresence>

@@ -15,7 +15,7 @@ export default function ReasonsSection() {
     "Your OVERLY expressive hand gestures",
     "How happy u make me feel when I am around u",
     "You being ragebaited by me (I had to mention it twice)",
-    "How ur always there for your friends and everyone around u whenver they need u",
+    "How ur always there for your friends and everyone around u whenever they need u",
     "How hardworking u are and how u never give up (ur most under appreciated quality)",
     "everything you are",
   ];
